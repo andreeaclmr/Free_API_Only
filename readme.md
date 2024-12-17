@@ -56,7 +56,7 @@ Pasos para ejecutar la aplicación y pasar los tests.
 
 - [x] - Tests de Acceptación
 - [x] - Tests Unitarios
-- 
+- [x] - Global Exception Handling
 
 ## UML Diagram
 
@@ -85,26 +85,8 @@ Acceptation criteria:
 
 - **HTTP Method:** POST
 - **URL: /post/musicians**
-- **Request Body:**
-
-
-/code
-- {
-  "name": "John Doe",
-  "skills": "Guitar, Singing",  
-  "portfolio_link": "http://johndoeportfolio.com",
-  "dateCreated": "2024-12-17"
-}
-
-- **Response Body:*
-
- { "id": 1,
-  "name": "John Doe",
-  "skills": "Guitar, Singing",
-  "portfolio_link": "http://johndoeportfolio.com",
-  "portfolio_picture": "URL"
-  "created_at": "2024-12-17"
-  }
+- **Request Body code:**
+- **Response Body code:**
 
 
 ## Kanban with GitHub Projects
