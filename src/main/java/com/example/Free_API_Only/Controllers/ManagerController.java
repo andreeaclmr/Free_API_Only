@@ -1,6 +1,7 @@
 package com.example.Free_API_Only.Controllers;
 
 import com.example.Free_API_Only.Entities.Manager;
+import com.example.Free_API_Only.Exceptions.ResourceNotFoundException;
 import com.example.Free_API_Only.Repositories.ManagerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -22,11 +23,11 @@ public class ManagerController {
     }
 
     // Get All Managers
-    @GetMapping("/get/managers")
-    public ResponseEntity<List<Manager>> getAllManagers() {
-        List<Manager> managers = managerRepository.findAll();
-        return ResponseEntity.ok(managers);
-
+    @GetMapping("/get/managers/{id}")
+        public ResponseEntity<Manager> getManagerByID(@PathVariable long id) {
+        return managerRepository.findById(id)
+                .map(ResponseEntity::ok)
+                .orElseThrow(() -> new ResourceNotFoundException("Manager with id " + id + " not found"));
     }
 
     // Create One Manager
