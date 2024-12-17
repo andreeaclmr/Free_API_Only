@@ -38,20 +38,14 @@ public class MusicianController {
     }
 
     // Get Musicians by Name -- not working
-    @GetMapping("/get/{name}")
+    @GetMapping("/get/name/{name}")
     public ResponseEntity<Musician> getMusicianByName(@PathVariable String name) {
-        Optional<Musician> musician = MusicianRepository.findByName(name);
+        Optional<Musician> musician = MusicianRepository.findbyname(name);
         if (musician.isPresent()) {
             return ResponseEntity.ok(musician.get());
         }
         return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
     }
-
-/*
-    // Edit a Musician
-    @PutMapping("/put/musicians/{id}")
-*/
-
 
     // Delete a Musician
     @DeleteMapping("/del/musicians/{id}")
@@ -60,15 +54,16 @@ public class MusicianController {
         return new ResponseEntity<>("Deleted Successfully", HttpStatus.OK);
     }
 
-   /*  @PutMapping("put/musicians/{id}")
+    @PutMapping("put/musicians/{id}")
     public ResponseEntity<Musician> updateMusician(@PathVariable long id, @RequestBody Musician musician) {
         try {
             Optional<Musician> existingMusician = musicianRepository.findById(id);
             if (existingMusician.isPresent()) {
                 Musician updatedMusician = existingMusician.get();
                 updatedMusician.setName(musician.getName());
-                updatedMusician.getSkills(musician.getSkills());
-                updatedMusician.setPortfolio_link(musician.getPortfolio_link());
+                updatedMusician.setSkills(musician.getSkills());
+                updatedMusician.setPhoto(musician.getPhoto());
+                updatedMusician.setLink(musician.getLink());
                 updatedMusician.setDateCreated(musician.getDateCreated());
             Musician savedMusician = musicianRepository.save(updatedMusician);
             return ResponseEntity.ok(savedMusician);
@@ -80,6 +75,6 @@ public class MusicianController {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
 
     }
-    } */
+    }
     }
 
