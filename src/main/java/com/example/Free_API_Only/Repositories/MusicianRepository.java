@@ -5,8 +5,11 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
+import java.util.Optional;
 
 @Repository
 public interface MusicianRepository extends JpaRepository<Musician, Long> {
-
+    static Optional<Musician> findByName(String name) {
+        return null;
+    }
 }

@@ -19,6 +19,7 @@ public class Musician {
     @Column
     private LocalDate dateCreated;
 
+
     public Long getId() {
         return id;
     }
@@ -36,7 +37,7 @@ public class Musician {
     }
 
     public String getSkills() {
-        return skills;
+        return this.skills;
     }
 
     public void setSkills(String skills) {
