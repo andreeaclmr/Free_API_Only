@@ -1,32 +1,28 @@
 package com.example.Free_API_Only.Entities;
 
+import jakarta.persistence.*;
+import lombok.*;
+
+import java.time.LocalDate;
+
+@Entity
+@Getter
+@Setter
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 public class Musician {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private String name;
+    @Column
     private String skills;
+    @Column
     private String portfolio_link;
-    private String portfolio_picture;
-
-    public Musician(String name, String skills, String portfolio_link, String portfolio_picture) {
-        this.name = name;
-        this.skills = skills;
-        this.portfolio_link = portfolio_link;
-        this.portfolio_picture = portfolio_picture;
-    }
-
-    public String getName(String name) {
-        return name;
-    }
-
-    public String getSkills(String skills) {
-        return this.skills;
-    }
-
-    public String getPortfolio_link(String portfolio_link) {
-        return this.portfolio_link;
-    }
-
-    public String getPortfolio_picture(String portfolio_picture) {
-        return this.portfolio_picture;
-    }
+    @Column
+    private LocalDate dateCreated;
+    @ManyToMany(cascade = CascadeType.ALL)
+    @JoinColumn(name = "idManager", nullable = false)
+    private Manager manager;
 }
 
