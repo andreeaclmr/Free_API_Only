@@ -37,12 +37,12 @@ public class MusicianController {
         return new ResponseEntity<>(musician, HttpStatus.CREATED);
     }
 
-    // Get Musicians by Name -- not working
-    @GetMapping("/get/name/{name}")
-    public ResponseEntity<Musician> getMusicianByName(@PathVariable String name) {
-        Optional<Musician> musician = MusicianRepository.findbyname(name);
+    // Get Musicians by ID
+    @GetMapping("/get/id/{id}")
+    public ResponseEntity<Musician> getMusicianById(@PathVariable Long id) {
+        Optional<Musician> musician = musicianRepository.findById(id);
         if (musician.isPresent()) {
-            return ResponseEntity.ok(musician.get());
+            return new ResponseEntity<>(musician.get(), HttpStatus.OK);
         }
         return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
     }
