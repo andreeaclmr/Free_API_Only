@@ -15,9 +15,14 @@ public class Musician {
     @Column
     private String skills;
     @Column
-    private String portfolio_link;
+    private String link;
+    @Column
+    private String photo;
     @Column
     private LocalDate dateCreated;
+    @ManyToOne(cascade = CascadeType.PERSIST)
+    @JoinColumn(name = "idManager", nullable = true)
+    private Manager manager;
 
 
     public Long getId() {
@@ -44,12 +49,20 @@ public class Musician {
         this.skills = skills;
     }
 
-    public String getPortfolio_link() {
-        return portfolio_link;
+    public String getLink() {
+        return link;
     }
 
-    public void setPortfolio_link(String portfolio_link) {
-        this.portfolio_link = portfolio_link;
+    public void setLink(String link) {
+        this.link = link;
+    }
+
+    public String getPhoto() {
+        return photo;
+    }
+
+    public void setPhoto(String photo) {
+        this.photo = photo;
     }
 
     public LocalDate getDateCreated() {
@@ -60,11 +73,12 @@ public class Musician {
         this.dateCreated = dateCreated;
     }
 
-    public Musician(Long id, String name, String skills, String portfolio_link, LocalDate dateCreated) {
+    public Musician(Long id, String name, String skills, String link, String photo, LocalDate dateCreated) {
         this.id = id;
         this.name = name;
         this.skills = skills;
-        this.portfolio_link = portfolio_link;
+        this.link = link;
+        this.photo = photo;
         this.dateCreated = dateCreated;
     }
 
