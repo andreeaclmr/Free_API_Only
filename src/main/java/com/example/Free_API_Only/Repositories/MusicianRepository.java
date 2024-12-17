@@ -9,6 +9,4 @@ import java.util.List;
 public interface MusicianRepository {
     List<Musician> findAll();
 
-    default 
-
 }

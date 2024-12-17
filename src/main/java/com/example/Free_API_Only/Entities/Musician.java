@@ -13,7 +13,7 @@ import java.time.LocalDate;
 @AllArgsConstructor
 public class Musician {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
     private String name;
     @Column
     private String skills;
@@ -21,8 +21,5 @@ public class Musician {
     private String portfolio_link;
     @Column
     private LocalDate dateCreated;
-    @ManyToMany(cascade = CascadeType.ALL)
-    @JoinColumn(name = "idManager", nullable = false)
-    private Manager manager;
 }
 
