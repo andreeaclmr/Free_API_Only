@@ -54,6 +54,7 @@ public class MusicianController {
         return new ResponseEntity<>("Deleted Successfully", HttpStatus.OK);
     }
 
+    // Update a Musician
     @PutMapping("put/musicians/{id}")
     public ResponseEntity<Musician> updateMusician(@PathVariable long id, @RequestBody Musician musician) {
         try {

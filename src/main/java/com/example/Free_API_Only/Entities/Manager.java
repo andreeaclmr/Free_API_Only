@@ -12,17 +12,20 @@ import lombok.*;
 @Table(name = "manager")
 
 public class Manager {
-@Id
+    @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(nullable = false)
     private long id;
+
     @Column(nullable = false)
     private String name;
+
     @Column(nullable = false)
     private String company;
-    @Column (nullable = false)
-    private String email;
-    @Column (nullable = false)
-    private String seeking_skills;
 
+    @Column(nullable = false, unique = true)
+    private String email;
+
+    @Column(nullable = false)
+    private String seeking_skills;
 }
