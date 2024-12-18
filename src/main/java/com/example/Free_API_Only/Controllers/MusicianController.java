@@ -1,6 +1,6 @@
 package com.example.Free_API_Only.Controllers;
 
-import com.example.Free_API_Only.DTOs.MusicianRequest;
+import com.example.Free_API_Only.DTOs.MusicianRequestDTO;
 import com.example.Free_API_Only.Entities.Musician;
 import com.example.Free_API_Only.Repositories.MusicianRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,10 +33,10 @@ public class MusicianController {
 
     // Create One Musician
     @PostMapping("/post/musicians")
-    public ResponseEntity<Musician> createMusician(@RequestBody MusicianRequest musicianRequest) {
+    public ResponseEntity<Musician> createMusician(@RequestBody MusicianRequestDTO musicianRequestDTO) {
         //Mapping Request DTO to Entity
 
-        Musician musician = new Musician(musicianRequest.name(), musicianRequest.skills(), musicianRequest.link(), musicianRequest.photo(), musicianRequest.dateCreated());
+        Musician musician = new Musician(musicianRequestDTO.name(), musicianRequestDTO.skills(), musicianRequestDTO.link(), musicianRequestDTO.photo(), musicianRequestDTO.dateCreated());
         Musician savedMusician = musicianRepository.save(musician);
         return new ResponseEntity<>(musician, HttpStatus.CREATED);
     }
