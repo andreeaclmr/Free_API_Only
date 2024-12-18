@@ -4,7 +4,6 @@ import jakarta.persistence.*;
 import lombok.*;
 
 @Entity
-@Builder
 @Table(name = "manager")
 
 public class Manager {
@@ -24,6 +23,15 @@ public class Manager {
 
     @Column(nullable = false)
     private String seeking_skills;
+
+
+    public Manager(long id, String name, String company, String email, String seeking_skills) {
+        this.id = id;
+        this.name = name;
+        this.company = company;
+        this.email = email;
+        this.seeking_skills = seeking_skills;
+    }
 
     public long getId() {
         return id;
@@ -65,12 +73,6 @@ public class Manager {
         this.seeking_skills = seeking_skills;
     }
 
-    public Manager(long id, String name, String company, String email, String seeking_skills) {
-        this.id = id;
-        this.name = name;
-        this.company = company;
-        this.email = email;
-        this.seeking_skills = seeking_skills;
+    public Manager() {}
 
-    }
 }

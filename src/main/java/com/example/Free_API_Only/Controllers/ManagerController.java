@@ -63,7 +63,7 @@ public class ManagerController {
         return new ResponseEntity<>("Deleted Successfully", HttpStatus.OK);
     }
 
-/*
+
     // Update a Manager // no funciona
     @PutMapping("put/managers/{id}")
     public ResponseEntity<Manager> updateManager(@PathVariable long id, @RequestBody Manager manager) {
@@ -83,8 +83,7 @@ public class ManagerController {
         } catch (RuntimeException e) {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
 
-        } */
-    }
-
+        }
+    }}
 
 

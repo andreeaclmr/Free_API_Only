@@ -1,6 +1,7 @@
 package com.example.Free_API_Only.Controllers;
 
 import com.example.Free_API_Only.DTOs.MusicianRequestDTO;
+import com.example.Free_API_Only.DTOs.MusicianResponseDTO;
 import com.example.Free_API_Only.Entities.Musician;
 import com.example.Free_API_Only.Repositories.MusicianRepository;
 import org.springframework.beans.factory.annotation.Autowired;
