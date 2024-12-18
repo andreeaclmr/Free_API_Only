@@ -36,33 +36,69 @@ The project was build with SpringBoot Initializr version 3.3.6, JAR Packaging, 2
 
 
 ## Dependencies
-- Spring Web
-- H2 Database
-- Spring Data JPA
-- Lombok
-- Docker Compose Support
+### Spring Boot Dependencies
+- [x] spring-boot-starter-data-jpa
+- [x] jackson-datatype-jsr310
+- [x] spring-boot-starter-web
+- [x] spring-boot-starter-validation
+
+### Database Drivers
+- [x] h2
+- [x] postgresql
+- [x] mysql-connector-j
+
+### Testing Dependencies
+- [x] spring-boot-starter-test
+- [x] junit-jupiter-api
+- [x] junit-jupiter-engine
+- [x] mockito-core
+- [x] mockito-junit-jupiter
+
+### Lombok
+- [x] lombok
+
+### Springdoc OpenAPI
+- [x] springdoc-openapi-starter-webmvc-ui
 
 ## Functionalities
 - [x] Register Musicians, Search entire list, List by Name, Update and Delete
 - [x] Register Managers, Search entire list, List by ID, Update and Delete
-- [x] - Connects to an API through JPA and H2
-- [x] - Each musician added to JPA receives an unique ID
-- [x] - CRUD tested with Postman
-- [x] - Using DTO & Services Classes
-- 
+- [x] Connects to an API through JPA and H2
+- [x] Each musician added to JPA receives an unique ID
+- [x] CRUD tested with Postman
+- [x] Using DTO Classes
+
 
 ## Tests
 Pasos para ejecutar la aplicación y pasar los tests.
 
-- [x] - Tests de Acceptación
-- [x] - Tests Unitarios
-- [x] - Global Exception Handling
+- [x] Musician Acceptance Test
+- [] Tests Unitarios
+- [] Global Exception Handling
 
 ## UML Diagram
 
 
 ## E/R Diagram
-Modelos E/R de la base de datos.
+```mermaid
+erDiagram
+    MANAGER ||--o{ MUSICIAN : has
+    MANAGER {
+        int id
+        String name
+        String company
+        String email
+        String seeking_skills
+    }
+    MUSICIAN {
+        int id
+        String name
+        String skills
+        String link
+        String photo
+        LocalDate dateCreated
+    }
+```
 
 
 ## Profiles
@@ -91,8 +127,43 @@ Acceptation criteria:
 
 ## Kanban with GitHub Projects
 
+## API Documentation
+This project uses [Swagger](https://swagger.io/) for documenting the API endpoints. Swagger provides an interactive interface to explore and test the APIs.
+### Accessing the Documentation
+
+After running the application, you can access the Swagger UI by visiting:
+http://localhost:8080/swagger-ui.html
 
 
+### Example Endpoints
+
+- **Get All Managers:** `GET /api/get/managers`
+- **Create Manager:** `POST /api/post/managers`
+- **Delete Manager:** `DELETE /api/del/managers/{id}`
+
+### Swagger UI Preview
+
+Below is a preview of the Swagger UI interface:
+
+![Swagger UI Screenshot1](path/to/your/screenshot.png)
+![Swagger UI Screenshot2](path/to/your/screenshot.png)
+![Swagger UI Screenshot3](path/to/your/screenshot.png)
+![Swagger UI Screenshot4](path/to/your/screenshot.png)
+
+### Schemas IU Preview
+![Schemas UI Screenshot1](path/to/your/screenshot.png)
+
+### Swagger Setup
+
+This project uses **Springdoc OpenAPI** for Swagger integration. The configuration is minimal and handled automatically. Dependencies used:
+
+```xml
+<dependency>
+    <groupId>org.springdoc</groupId>
+    <artifactId>springdoc-openapi-ui</artifactId>
+    <version>1.6.15</version>
+</dependency>
+```
 
 ## About Me
 **Andreea Celmare**
