@@ -8,7 +8,4 @@ import java.util.Optional;
 
 @Repository
 public interface ManagerRepository extends JpaRepository<Manager, Long> {
-    static Optional<Manager> findbyid(long id) {
-        return null;
-    }
 }

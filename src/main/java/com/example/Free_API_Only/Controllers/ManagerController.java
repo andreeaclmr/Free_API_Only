@@ -1,6 +1,7 @@
 package com.example.Free_API_Only.Controllers;
 
 import com.example.Free_API_Only.Entities.Manager;
+import com.example.Free_API_Only.Entities.Musician;
 import com.example.Free_API_Only.Exceptions.ResourceNotFoundException;
 import com.example.Free_API_Only.Repositories.ManagerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,26 +23,30 @@ public class ManagerController {
         this.managerRepository = managerRepository;
     }
 
-    // Get All Managers
-    @GetMapping("/get/managers/{id}")
-        public ResponseEntity<Manager> getManagerByID(@PathVariable long id) {
-        return managerRepository.findById(id)
-                .map(ResponseEntity::ok)
-                .orElseThrow(() -> new ResourceNotFoundException("Manager with id " + id + " not found"));
+    // Get All Managers // no funciona
+    @GetMapping("/get/managers")
+    public ResponseEntity<List<Manager>> getAllManagers() {
+        List<Manager> managers = managerRepository.findAll();
+        return ResponseEntity.ok(managers);
+
     }
 
     // Create One Manager
     @PostMapping("/post/managers")
     public ResponseEntity<Manager> createManager(@RequestBody Manager manager) {
+        if (manager.getName() == null || manager.getCompany() == null || manager.getEmail() == null) {
+            return new ResponseEntity<>(null, HttpStatus.BAD_REQUEST);
+        }
         try {
             Manager savedManager = managerRepository.save(manager);
             return new ResponseEntity<>(savedManager, HttpStatus.CREATED);
         } catch (Exception e) {
+            e.printStackTrace();
             return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
 
-    // Get Managers by id -- not working
+    // Get Managers by id // no funciona
     @GetMapping("/get/managers/id/{id}")
     public ResponseEntity<Manager> getManagerById(@PathVariable long id) {
         Optional<Manager> manager = managerRepository.findById(id);
@@ -58,8 +63,8 @@ public class ManagerController {
         return new ResponseEntity<>("Deleted Successfully", HttpStatus.OK);
     }
 
-/*
-    // Update a Manager
+
+    // Update a Manager // no funciona
     @PutMapping("put/managers/{id}")
     public ResponseEntity<Manager> updateManager(@PathVariable long id, @RequestBody Manager manager) {
         try {
@@ -67,7 +72,6 @@ public class ManagerController {
             if (existingManager.isPresent()) {
                 Manager updatedManager = existingManager.get();
                 updatedManager.setName(manager.getName());
-                updatedManager.setCompany(manager.getCompany());
                 updatedManager.setEmail(manager.getEmail());
                 updatedManager.setSeeking_skills(manager.getSeeking_skills());
                 Manager savedManager = managerRepository.save(updatedManager);
@@ -79,8 +83,7 @@ public class ManagerController {
         } catch (RuntimeException e) {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
 
-        } */
-    }
-
+        }
+    }}
 
 

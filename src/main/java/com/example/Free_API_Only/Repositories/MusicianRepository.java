@@ -9,7 +9,5 @@ import java.util.Optional;
 
 @Repository
 public interface MusicianRepository extends JpaRepository<Musician, Long> {
-    static Optional<Musician> findbyname(String name) {
-        return null;
-    }
+
 }
