@@ -11,14 +11,19 @@ public class Musician {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
     private String name;
     @Column
+
     private String skills;
     @Column
+
     private String link;
     @Column
+
     private String photo;
     @Column
+
     private LocalDate dateCreated;
     @ManyToOne(cascade = CascadeType.PERSIST)
     @JoinColumn(name = "idManager", nullable = true)

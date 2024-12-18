@@ -1,5 +1,6 @@
 package com.example.Free_API_Only.Entities;
 
+import com.example.Free_API_Only.Enum.Status;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -23,6 +24,10 @@ public class Manager {
 
     @Column(nullable = false)
     private String seeking_skills;
+
+    @Enumerated(EnumType.STRING)
+    @Column(nullable = false)
+    private Status status;
 
 
     public Manager(long id, String name, String company, String email, String seeking_skills) {
@@ -71,6 +76,14 @@ public class Manager {
 
     public void setSeeking_skills(String seeking_skills) {
         this.seeking_skills = seeking_skills;
+    }
+
+    public Status getStatus() {
+        return status;
+    }
+
+    public void setStatus(Status status) {
+        this.status = status;
     }
 
     public Manager() {}

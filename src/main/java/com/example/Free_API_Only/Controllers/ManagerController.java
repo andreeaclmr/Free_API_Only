@@ -2,6 +2,7 @@ package com.example.Free_API_Only.Controllers;
 
 import com.example.Free_API_Only.Entities.Manager;
 import com.example.Free_API_Only.Entities.Musician;
+import com.example.Free_API_Only.Enum.Status;
 import com.example.Free_API_Only.Exceptions.ResourceNotFoundException;
 import com.example.Free_API_Only.Repositories.ManagerRepository;
 import io.swagger.v3.oas.annotations.Operation;
@@ -56,7 +57,7 @@ public class ManagerController {
     })
 
     public ResponseEntity<Manager> createManager(@RequestBody Manager manager) {
-        if (manager.getName() == null || manager.getCompany() == null || manager.getEmail() == null) {
+        if (manager.getName() == null || manager.getCompany() == null || manager.getEmail() == null || manager.getStatus() == null) {
             return new ResponseEntity<>(null, HttpStatus.BAD_REQUEST);
         }
         try {
@@ -88,6 +89,21 @@ public class ManagerController {
         return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
     }
 
+    @GetMapping("/get/managers/status/{status}")
+    @Operation(
+            summary = "Get a manager by Status",
+            description = "Retrieves the details of a manager by their Status."
+    )
+    @ApiResponses({
+            @ApiResponse(responseCode = "200", description = "Manager retrieved successfully"),
+            @ApiResponse(responseCode = "404", description = "Manager not found"),
+            @ApiResponse(responseCode = "500", description = "Internal Server Error")
+    })
+
+    public ResponseEntity<List<Manager>> getManagerByStatus(@PathVariable Status status) {
+        List<Manager> managers = managerRepository.findByStatus(status);
+        return ResponseEntity.ok(managers);
+    }
 
     @DeleteMapping("/del/managers/{id}")
     @Operation(
