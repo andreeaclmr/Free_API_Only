@@ -25,6 +25,15 @@ public class Musician {
     private Manager manager;
 
 
+    public Musician(String name, String skills, String link, String photo, LocalDate dateCreated) {
+        this.name = name;
+        this.skills = skills;
+        this.link = link;
+        this.photo = photo;
+        this.dateCreated = dateCreated;
+    }
+
+
     public Long getId() {
         return id;
     }
