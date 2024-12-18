@@ -67,6 +67,7 @@ The project was build with SpringBoot Initializr version 3.3.6, JAR Packaging, 2
 - [x] Each musician added to JPA receives an unique ID
 - [x] CRUD tested with Postman
 - [x] Using DTO Classes
+- [x] Search by Status using Enum Class
 
 
 ## Tests
@@ -99,30 +100,13 @@ erDiagram
         LocalDate dateCreated
     }
 ```
-
+## Enum and Filters
+Managers have an extra filter and can be sorted by the status Active/ Inactive.
+While retrieving data using the GET by Status endpoint, it is necessary to write the status in capslock.
+The endpoint for this application is: localhost:8080/api/get/managers/status/ACTIVE
 
 ## Profiles
 Explicación de los perfiles.
-
-## Endpoints
-Listado de endpoints y ejemplos de uso.
-# Musicians Management
-
-## **User Story 1: Register a musician**
-
-As an admin, I want to register and create profiles for the musicians.
-
-Acceptation criteria:
-1. Send 4 data and receive an ID
-2. All fields are required, otherwise an error is received
-3. Only one skill will be added in the first sprint
-
-**Endpoint:**
-
-- **HTTP Method:** POST
-- **URL: /post/musicians**
-- **Request Body code:**
-- **Response Body code:**
 
 
 ## Kanban with GitHub Projects
