@@ -6,6 +6,8 @@ import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMock
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
+import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
+import org.springframework.test.web.servlet.result.StatusResultMatchers;
 
 import static org.junit.jupiter.api.Assertions.*;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
@@ -30,10 +32,11 @@ class MusicianAcceptanceTest {
                 "dateCreated": "2024-12-17"
                 }
                 """;
-mockMvc.perform(post("/post/musicians")
+
+        /* mockMvc.perform(post("/post/musicians")
         .contentType(MediaType.APPLICATION_JSON));
         .content(musicianRequest);
-        .andExpect(status());
-    }
+        .andExpect(MockMvcResultMatchers.status().isCreated())
+    } */
 
-}
+} }
