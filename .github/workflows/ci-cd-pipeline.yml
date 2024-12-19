@@ -47,16 +47,3 @@ jobs:
       - name: Push Docker image
         run: |
           docker push andreeaclmr/free-api-only:latest
-
-
-  deploy:
-    needs: build
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout the repository
-        uses: actions/checkout@v2
-
-      - name: Deploy to server (or cloud)
-        run: |
-          # Example for Docker Compose deployment
-          ssh -i ${{ secrets.SSH_PRIVATE_KEY }} user@your-server-ip "docker pull andreeaclmr/free-api-only:latest && docker-compose up -d"
