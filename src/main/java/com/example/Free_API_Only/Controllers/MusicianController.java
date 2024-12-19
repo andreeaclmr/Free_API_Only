@@ -26,7 +26,10 @@ public class MusicianController {
         this.musicianRepository = musicianRepository;
     }
 
-
+    @GetMapping("/")
+    public String getMusician() {
+        return "Musician endpoint";
+    }
 
     @GetMapping("/get/musicians")
     @Operation(

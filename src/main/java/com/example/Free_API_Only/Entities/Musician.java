@@ -25,9 +25,9 @@ public class Musician {
     @Column
 
     private LocalDate dateCreated;
-    @ManyToOne(cascade = CascadeType.PERSIST)
-    @JoinColumn(name = "idManager", nullable = true)
-    private Manager manager;
+   // @ManyToOne(cascade = CascadeType.PERSIST)
+   // @JoinColumn(name = "idManager", nullable = true)
+   // private Manager manager;
 
 
     public Musician(String name, String skills, String link, String photo, LocalDate dateCreated) {

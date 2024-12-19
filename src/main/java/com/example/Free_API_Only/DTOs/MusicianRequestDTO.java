@@ -1,5 +1,6 @@
 package com.example.Free_API_Only.DTOs;
 
+import com.example.Free_API_Only.Entities.Manager;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Past;
@@ -21,4 +22,6 @@ public record MusicianRequestDTO(
 
         @NotNull(message= "Creation Date can't be null")
         LocalDate dateCreated
-) {}
+) {
+
+}
