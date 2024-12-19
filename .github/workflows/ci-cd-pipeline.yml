@@ -34,7 +34,7 @@ jobs:
 
       - name: Build Docker image
         run: |
-          docker build -t your-dockerhub-username/your-image-name .
+          docker build -t andreeaclmr/free-api-only:latest .
 
       - name: Log in to Docker Hub
         uses: docker/login-action@v2
@@ -44,7 +44,7 @@ jobs:
 
       - name: Push Docker image
         run: |
-          docker push your-dockerhub-username/your-image-name:latest
+          docker push andreeaclmr/free-api-only:latest
 
 
   deploy:
@@ -57,4 +57,4 @@ jobs:
       - name: Deploy to server (or cloud)
         run: |
           # Example for Docker Compose deployment
-          ssh -i ${{ secrets.SSH_PRIVATE_KEY }} user@your-server-ip "docker pull your-dockerhub-username/your-image-name:latest && docker-compose up -d"
+          ssh -i ${{ secrets.SSH_PRIVATE_KEY }} user@your-server-ip "docker pull andreeaclmr/free-api-only:latest && docker-compose up -d"
