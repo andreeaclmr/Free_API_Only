@@ -101,15 +101,29 @@ erDiagram
     }
 ```
 ## Enum and Filters
-Managers have an extra filter and can be sorted by the status Active/ Inactive.
-While retrieving data using the GET by Status endpoint, it is necessary to write the status in capslock.
-The endpoint for this application is: localhost:8080/api/get/managers/status/ACTIVE
+- Managers have an extra filter and can be sorted by the status Active/ Inactive.
+- While retrieving data using the GET by Status endpoint, it is necessary to write the status in capslock.
+- The endpoint for this application is: localhost:8080/api/get/managers/status/ACTIVE
 
 ## Profiles
-Explicación de los perfiles.
+Added `application-dev.properties`, `application-test.properties`, and `application-prod.properties`
+for environment-specific configurations.
 
+Updated `application.properties` to set `dev` as the default active profile, to begin with.
+
+Configured database settings and Hibernate behavior for each profile:
+- `dev`: In-memory H2 database with schema updates.
+- `test`: Separate H2 database for testing with `create-drop` behavior.
+- `prod`: MySQL database with schema validation.
+
+### Testing the active profiles:
+Verified profile switching with `spring.profiles.active` and ensured correct configurations load.
+- mvn spring-boot:run -Dspring-boot.run.profiles=dev
+- mvn spring-boot:run -Dspring-boot.run.profiles=test
+- mvn spring-boot:run -Dspring-boot.run.profiles=prod
 
 ## Kanban with GitHub Projects
+![Kanban Screenshot](path/to/your/screenshot.png)
 
 ## API Documentation
 This project uses [Swagger](https://swagger.io/) for documenting the API endpoints. Swagger provides an interactive interface to explore and test the APIs.
@@ -157,6 +171,9 @@ This project uses **Springdoc OpenAPI** for Swagger integration. The configurati
 
 
 ## Special Thanks
-Sergi Virgili & Amr Hefny from Factoria F5
+Many thanks to my teachers, for their patience and wisdom
+- **Sergi Virgili** [<img src="https://img.shields.io/badge/github-%23121011.svg?&style=for-the-badge&logo=github&logoColor=white" alt="GitHub" />](https://github.com/Sergi-Virgili)
+- **Amr Hefny** [<img src="https://img.shields.io/badge/github-%23121011.svg?&style=for-the-badge&logo=github&logoColor=white" alt="GitHub" />](https://github.com/amrhefny87)
+- from **Factoria F5** [<img src="https://img.shields.io/badge/github-%23121011.svg?&style=for-the-badge&logo=github&logoColor=white" alt="GitHub" />](https://github.com/FactoriaF5Code)
 
 
