@@ -4,50 +4,51 @@
 The project aims to connect musicians and managers, with the aim of helping the new musicians to get known.
 The interaction takes place at the Admin level in the beginning, while working on a future version where both Musicians and Managers can create their own profiles and manage them as well.
 
-## Tools & Tech
-The project was build with SpringBoot Initializr version 3.3.6, JAR Packaging, 21 Java
+## Getting Started - Installation
+To run this project locally:
+1. Clone the repository: `git clone <repository-url>`
+2. Navigate to the project directory: `cd Free_API_Only`
+3. Run the application with Maven: `mvn spring-boot:run`
 
-### <ins>Back End</ins>
-- IntellijIdea Community version
+## Technologies Used
+The project was built with SpringBoot Initializr version 3.3.6, JAR Packaging, 21 Java
+
+### Frameworks
+- Spring
+- Spring Boot Dependencies:
+  - spring-boot-starter-data-jpa
+  - spring-boot-starter-web
+  - spring-boot-starter-validation
+  - jackson-datatype-jsr310
+- Springdoc OpenAPI (springdoc-openapi-starter-webmvc-ui)
+- Lombok
+
+### Database
+- MySQL
+- H2
+- PostgreSQL
+- Database Drivers:
+  - mysql-connector-j
+  - postgresql
+  - h2
+
+### Testing
+- Spring Boot Testing Dependencies:
+  - spring-boot-starter-test
+  - junit-jupiter-api
+  - junit-jupiter-engine
+  - mockito-core
+  - mockito-junit-jupiter
+
+### Development Tools
+- IntelliJ IDEA Community Edition
 - Java
 - Maven
-
-
-### <ins>Data & APIs</ins>
-- Spring
-- MySQL
 - Postman
-
-### <ins>Misc</ins>
 - GIT
 - GitHub
 - GitHub Projects
 
-
-## Dependencies
-### Spring Boot Dependencies
-- [x] spring-boot-starter-data-jpa
-- [x] jackson-datatype-jsr310
-- [x] spring-boot-starter-web
-- [x] spring-boot-starter-validation
-
-### Database Drivers
-- [x] h2
-- [x] postgresql
-- [x] mysql-connector-j
-
-### Testing Dependencies
-- [x] spring-boot-starter-test
-- [x] junit-jupiter-api
-- [x] junit-jupiter-engine
-- [x] mockito-core
-- [x] mockito-junit-jupiter
-
-### Lombok
-- [x] lombok
-
-### Springdoc OpenAPI
-- [x] springdoc-openapi-starter-webmvc-ui
 
 ## Functionalities
 - [x] Register Musicians, Search entire list, List by Name, Update and Delete
@@ -59,17 +60,10 @@ The project was build with SpringBoot Initializr version 3.3.6, JAR Packaging, 2
 - [x] Search by Status using Enum Class
 
 
-## Tests
-Pasos para ejecutar la aplicación y pasar los tests.
-
-- [x] Musician Acceptance Test
-- [] Tests Unitarios
-- [] Global Exception Handling
-
-## UML Diagram
+### UML Diagram
 
 
-## E/R Diagram
+### E/R Diagram
 ```mermaid
 erDiagram
     MANAGER ||--o{ MUSICIAN : has
@@ -89,6 +83,7 @@ erDiagram
         LocalDate dateCreated
     }
 ```
+
 ## Enum and Filters
 - Managers have an extra filter and can be sorted by the status Active/ Inactive.
 - While retrieving data using the GET by Status endpoint, it is necessary to write the status in capslock.
@@ -111,8 +106,13 @@ Verified profile switching with `spring.profiles.active` and ensured correct con
 - mvn spring-boot:run -Dspring-boot.run.profiles=test
 - mvn spring-boot:run -Dspring-boot.run.profiles=prod
 
-## Kanban with GitHub Projects
-![Kanban Screenshot](path/to/your/screenshot.png)
+## Tests
+Steps to execute the aplication and pass the tests.
+
+- [x] Musician Acceptance Test
+- [in progress] Tests Unitarios
+- [in progress] Global Exception Handling
+
 
 ## API Documentation
 This project uses [Swagger](https://swagger.io/) for documenting the API endpoints. Swagger provides an interactive interface to explore and test the APIs.
@@ -162,7 +162,11 @@ Below is a preview of the Swagger UI interface:
 
 ![Docker Screenshot](Images/DockerContainer.png)
 
-### GIT Branches
+
+## Kanban with GitHub Projects
+![Kanban Screenshot](Images/Kanban.png)
+
+## GIT Branches
 #### -  main
 #### -  test
 #### -  feat/docker
