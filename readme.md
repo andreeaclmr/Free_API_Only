@@ -162,6 +162,18 @@ This project uses **Springdoc OpenAPI** for Swagger integration. The configurati
     <version>1.6.15</version>
 </dependency>
 ```
+## Docker Compose
+- Using the DEV Profile
+- Main endpoint defined in Home Controller GET("/")
+- 2nd endpoint defined in MusicianController GET("/")
+
+### Commands
+- docker-compose build
+- docker-compose up
+- docker-compose down
+- docker ps - to find the container ID
+- docker logs <container_id> - to check the logs
+
 
 ## About Me
 **Andreea Celmare**
