@@ -6,7 +6,7 @@ The interaction takes place at the Admin level in the beginning, while working o
 
 ## Getting Started - Installation
 To run this project locally:
-1. Clone the repository: `git clone <repository-url>`
+1. Clone the repository: `git clone <https://github.com/Bootcamp-Factoria-F5/Free_API_Only.git>`
 2. Navigate to the project directory: `cd Free_API_Only`
 3. Run the application with Maven: `mvn spring-boot:run`
 
@@ -48,6 +48,11 @@ The project was built with SpringBoot Initializr version 3.3.6, JAR Packaging, 2
 - GIT
 - GitHub
 - GitHub Projects
+- GitLab Actions
+- Mermaid
+- PlantUML Plugin
+- Swagger
+- Docker
 
 
 ## Functionalities
@@ -109,7 +114,7 @@ Verified profile switching with `spring.profiles.active` and ensured correct con
 ## Tests
 Steps to execute the aplication and pass the tests.
 
-- [x] Musician Acceptance Test
+- [in progress] Musician Acceptance Test
 - [in progress] Tests Unitarios
 - [in progress] Global Exception Handling
 
@@ -185,8 +190,22 @@ Below is a preview of the Swagger UI interface:
 
 ## Special Thanks
 Many thanks to my teachers, for their patience and wisdom:
-- ### **Sergi Virgili** [<img src="https://img.shields.io/badge/github-%23121011.svg?&style=for-the-badge&logo=github&logoColor=white" alt="GitHub" />](https://github.com/Sergi-Virgili)
-- ### **Amr Hefny** [<img src="https://img.shields.io/badge/github-%23121011.svg?&style=for-the-badge&logo=github&logoColor=white" alt="GitHub" />](https://github.com/amrhefny87)
-- ### **Factoria F5** [<img src="https://img.shields.io/badge/github-%23121011.svg?&style=for-the-badge&logo=github&logoColor=white" alt="GitHub" />](https://github.com/FactoriaF5Code)
+### **Sergi Virgili** 
+[<img src="https://img.shields.io/badge/github-%23121011.svg?&style=for-the-badge&logo=github&logoColor=white" alt="GitHub" />](https://github.com/Sergi-Virgili)
+[<img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" />](https://www.linkedin.com/in/sergi-virgili)
+
+
+
+### **Amr Hefny** 
+[<img src="https://img.shields.io/badge/github-%23121011.svg?&style=for-the-badge&logo=github&logoColor=white" alt="GitHub" />](https://github.com/amrhefny87)
+[<img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" />](https://www.linkedin.com/in/amrhefny)
+
+
+
+
+### **Factoria F5** 
+[<img src="https://img.shields.io/badge/github-%23121011.svg?&style=for-the-badge&logo=github&logoColor=white" alt="GitHub" />](https://github.com/FactoriaF5Code)
+[<img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" />](https://www.linkedin.com/school/factoriaf5/)
+
 
 
