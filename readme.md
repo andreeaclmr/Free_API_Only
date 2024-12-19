@@ -61,7 +61,7 @@ The project was built with SpringBoot Initializr version 3.3.6, JAR Packaging, 2
 
 
 ### UML Diagram
-
+![UML Diagram](Images/UML.png)
 
 ### E/R Diagram
 ```mermaid

@@ -1,0 +1,41 @@
+@startuml
+!define SPRING_COLOR #A3C1AD
+skinparam classBackgroundColor SPRING_COLOR
+
+class Controller {
+    +MusicianController
+    +ManagerController
+    +HomeController
+}
+class Entity {
+    +Musician
+    +Manager
+}
+class Record {
+    +MusicianRequestDTO
+    +ManagerRequestDTO
+}
+enum Enum {
+    +Status
+}
+class Database {
+    +MySQL
+    +H2
+}
+interface Repository {
+    +ManagerRepository
+    +MusicianRepository
+}
+class ExceptionHandler {
+    +GlobalExceptionHandler
+}
+
+Controller --> Service : "calls"
+Service --> Repository : "uses"
+Repository --> Entity : "manages"
+Entity --> Database : "persists"
+Controller --> Record : "receives/sends"
+Service --> Enum : "uses"
+Controller <-- ExceptionHandler : "handles exceptions"
+
+@enduml
