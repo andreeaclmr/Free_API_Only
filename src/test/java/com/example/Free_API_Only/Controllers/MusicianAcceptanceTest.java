@@ -33,10 +33,10 @@ class MusicianAcceptanceTest {
                 }
                 """;
 
-     /*    mockMvc.perform(post("/post/musicians")
+     /* mockMvc.perform(post("/post/musicians")
         .contentType(MediaType.APPLICATION_JSON));
         .content(musicianRequest);
-        .andExpect(MockMvcResultMatchers.status().isCreated())
+        .andExpect(MockMvcResultMatchers.status().isCreated());
     } */
 
 } }
